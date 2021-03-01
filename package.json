@@ -1,0 +1,13 @@
+{
+  "name": "error-key",
+  "version": "0.0.2",
+  "description": "Simplify your project errors & give them unique numbers",
+  "main": "index.js",
+  "keywords": ["error","codes","error-codes","bugs","issue","error-code","code"],
+  "author": "DawnImpulse",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DawnImpulse/error-key.git"
+  },
+  "license": "ISC"
+}
