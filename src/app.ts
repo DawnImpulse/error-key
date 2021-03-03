@@ -1,6 +1,21 @@
 /**
  * @info default entry point
  */
+import { get } from "config";
+import Mapping from "./utils/mapping";
+
+const mapping = new Mapping();
+
+/**
+ * initialize error key module
+ * @param name - (not required) if provided a different key name in config file
+ * @throws Error - in case config not provided
+ */
+export function init(name: string = "error-keys") {
+    const map = get(name);
+    if (map) throw new Error("configuration object/file not provided");
+    // #todo generate internal key/value pairs
+}
 
 /**
  * used to generate unique id
