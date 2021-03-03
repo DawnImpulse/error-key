@@ -3,6 +3,10 @@
   "version": "0.0.2",
   "description": "Simplify your project errors & give them unique numbers",
   "main": "index.js",
+  "scripts": {
+    "build": "echo compiling && tsc --project tsconfig.production.json && echo compiled",
+    "publish": ""
+  },
   "keywords": [
     "error",
     "codes",
@@ -19,6 +23,22 @@
   },
   "license": "ISC",
   "dependencies": {
-    "config": "^3.3.4"
+    "config": "3.3.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.16.1",
+    "@typescript-eslint/parser": "4.16.1",
+    "eslint": "7.21.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "12.3.1",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "nodemon": "^2.0.7",
+    "prettier": "2.2.1",
+    "source-map-support": "0.5.19",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.2"
   }
 }
