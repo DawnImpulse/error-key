@@ -5,6 +5,7 @@ import constant from "./constant";
 
 export default class Mapping {
     private readonly map: object;
+    private objKey: number = 100;
 
     /**
      * @constructor
@@ -16,40 +17,21 @@ export default class Mapping {
     }
 
     /**
-     * create key
-     * @param prevKey
-     * @param newKey
-     * @private
-     */
-    private key(prevKey, newKey) {
-        if (prevKey === "") return newKey;
-        return `${newKey}.${newKey}`;
-    }
-
-    /**
      * parse configuration object to map
+     * we will append parent key (error code) name with unique value
+     * eg 4011001 - here 401 is error code, 100 is obj key & 1 is error key
+     * externally 11001 will be returned as error key
      * @param config - configuration object
-     * @param key - mapping key
-     * @param num - mapping number
      * @private
      */
-    private parse(config: object, key: string = "", num: number = 0) {
-        let number = num;
-        Object.keys(config).forEach((el) => {
-            switch (config[el]) {
-                // array
-                case constant.ARRAY:
-                    throw new Error(
-                        "configuration should not contain array in any key",
-                    );
-                // object
-                case constant.OBJECT:
-                    this.parse(config[el], this.key(key, el), number);
-                    break;
-                // assign unique mapping number
-                default:
-                    this.map[this.key(key, el)] = ++number;
-            }
+    private parse(config: object) {
+        Object.keys(config).forEach((key) => {
+            this.map[key] = {};
+            const oid = ++this.objKey;
+            let eid = 0;
+            config[key].forEach((el) => {
+                this.map[key][el] = Number(`${key}${oid}${++eid}`);
+            });
         });
     }
 }

@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/mapping.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/mapping.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validations.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +67,7 @@
       <workItem from="1614828857650" duration="3042000" />
       <workItem from="1614832857173" duration="4276000" />
       <workItem from="1614839011061" duration="1567000" />
-      <workItem from="1614841559752" duration="1655000" />
+      <workItem from="1614841559752" duration="3489000" />
     </task>
     <servers />
   </component>

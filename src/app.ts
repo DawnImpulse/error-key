@@ -23,7 +23,8 @@ export function init(
     // read config file
     const map = readFileSync(resolve(rootPath, name), "utf-8");
     // validate config file
-    new Validations(extraCodes).config(JSON.parse(map)).unique();
+    validations = new Validations(extraCodes);
+    validations.config(JSON.parse(map)).unique();
     // creating internal mappings
     mapping = new Mapping(JSON.parse(map));
 }
