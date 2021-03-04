@@ -27,15 +27,6 @@ export default class Mapping {
     }
 
     /**
-     * increment place value
-     * @param number
-     * @private
-     */
-    private numIncrease(number) {
-        const length = number.toString().length;
-    }
-
-    /**
      * parse configuration object to map
      * @param config - configuration object
      * @param key - mapping key

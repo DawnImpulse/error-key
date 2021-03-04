@@ -5,19 +5,25 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 import Mapping from "./utils/mapping";
 import rootPath from "app-root-path";
-import typeOf from "./utils/typeOf";
-import constant from "./utils/constant";
+import Validations from "./utils/validations";
 
 let mapping: Mapping;
+let validations: Validations;
 
 /**
  * initialize error key module
- * @param name - (not required) if provided a different key name in config file
- * @throws Error - in case config not provided
+ * @param name - (not required) if provided a different name of file
+ * @param extraCodes - (not required) if need to provide different error codes
+ * @throws Error - any config related issues
  */
-export function init(name: string = "error-keys") {
+export function init(
+    extraCodes: number[] = [],
+    name: string = "error.config.json",
+) {
     // read config file
-    const map = readFileSync(resolve(rootPath, "error.config.json"), "utf-8");
+    const map = readFileSync(resolve(rootPath, name), "utf-8");
+    // validate config file
+    new Validations(extraCodes).config(JSON.parse(map)).unique();
     // creating internal mappings
     mapping = new Mapping(JSON.parse(map));
 }
