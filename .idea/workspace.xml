@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c21b6ba-fdc6-43fd-b1ff-f3f52059c89e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.mocharc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.nycrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/test.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/validations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/validations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/index.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,17 +53,37 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key" />
+      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\scripts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src" />
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src\app" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\scripts" />
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key" />
-    </key>
   </component>
-  <component name="RunManager" selected="Mocha.with extra codes">
-    <configuration name="with defaults testing.-ve tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.test">
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test:coverage" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test:coverage" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="with diff file name" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -71,26 +94,7 @@
       <test-kind>SUITE</test-kind>
       <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
       <test-names>
-        <name value="with defaults testing" />
-        <name value="-ve tests" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="with defaults testing.+ve tests.map.expect map have same outline" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
-      <test-names>
-        <name value="with defaults testing" />
-        <name value="+ve tests" />
-        <name value="map" />
-        <name value="expect map have same outline" />
+        <name value="with diff file name" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -125,30 +129,13 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="with extra codes.+ve tests.keys" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
-      <test-names>
-        <name value="with extra codes" />
-        <name value="+ve tests" />
-        <name value="keys" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.test:coverage" />
+        <item itemvalue="Mocha.with diff file name" />
         <item itemvalue="Mocha.with extra codes" />
         <item itemvalue="Mocha.with extra codes.+ve tests" />
-        <item itemvalue="Mocha.with extra codes.+ve tests.keys" />
-        <item itemvalue="Mocha.with defaults testing.-ve tests" />
-        <item itemvalue="Mocha.with defaults testing.+ve tests.map.expect map have same outline" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +153,7 @@
       <workItem from="1614832857173" duration="4276000" />
       <workItem from="1614839011061" duration="1567000" />
       <workItem from="1614841559752" duration="9461000" />
-      <workItem from="1614860826854" duration="1960000" />
+      <workItem from="1614860826854" duration="7149000" />
     </task>
     <servers />
   </component>
@@ -178,22 +165,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614862218751" />
-    <state width="1893" height="254" key="GridCell.Tab.0.bottom" timestamp="1614862758338">
+    <state x="676" y="298" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614864417536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614862758338" />
-    <state width="1893" height="254" key="GridCell.Tab.0.center" timestamp="1614862758337">
+    <state x="676" y="298" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614864417536" />
+    <state width="1893" height="679" key="GridCell.Tab.0.bottom" timestamp="1614863742955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614862758337" />
-    <state width="1893" height="254" key="GridCell.Tab.0.left" timestamp="1614862758337">
+    <state width="1893" height="679" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614863742955" />
+    <state width="1893" height="679" key="GridCell.Tab.0.center" timestamp="1614863742954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614862758337" />
-    <state width="1893" height="254" key="GridCell.Tab.0.right" timestamp="1614862758338">
+    <state width="1893" height="679" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614863742954" />
+    <state width="1893" height="679" key="GridCell.Tab.0.left" timestamp="1614863742954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614862758338" />
+    <state width="1893" height="679" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614863742954" />
+    <state width="1893" height="679" key="GridCell.Tab.0.right" timestamp="1614863742954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1893" height="679" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614863742954" />
     <state x="351" y="78" key="SettingsEditor" timestamp="1614783867957">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

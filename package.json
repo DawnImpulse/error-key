@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "echo compiling && tsc --project tsconfig.production.json && echo compiled",
-    "publish": ""
+    "clean": "del-cli ./dist",
+    "package": "",
+    "deploy": "",
+    "test": "sh scripts/test.sh",
+    "test:coverage" : "nyc npm test",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "error",
