@@ -56,7 +56,7 @@ export default class Validations {
                     "invalid data values ; array must contain only string values",
                 );
             // insert all array keys in top level array
-            this.keys.concat(config[key]);
+            this.keys = this.keys.concat(config[key]);
         });
         return this;
     }

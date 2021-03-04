@@ -1,7 +1,7 @@
 /**
  * @info main test file
  */
-import { before, after, describe, it } from "mocha";
+import { before, beforeEach, afterEach, after, describe, it } from "mocha";
 import appRoot from "app-root-path";
 import { writeFileSync, unlinkSync } from "fs";
 import { resolve } from "path";
@@ -424,6 +424,123 @@ describe("with diff file name", () => {
         // delete config file from root
         after(() => {
             unlinkSync(resolve(appRoot.path, "error.key.config.json"));
+        });
+    });
+});
+
+describe("invalid cases", () => {
+    // invalid key
+    describe("invalid key", () => {
+        before(() => {
+            // config data
+            const configFileData = {
+                777: ["error1"],
+            };
+
+            writeFileSync(
+                resolve(appRoot.path, "error.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+        });
+
+        it("expect to throw invalid key", function () {
+            expect(init).to.throw(
+                Error,
+                "invalid key '777' ; kindly provide a valid key (read error-key docs for help)",
+            );
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.config.json"));
+        });
+    });
+
+    // invalid data
+    describe("invalid data", () => {
+        before(() => {
+            const configFileData = {
+                400: {},
+            };
+
+            writeFileSync(
+                resolve(appRoot.path, "error.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+        });
+
+        it("expect to throw invalid data", function () {
+            expect(init).to.throw(
+                Error,
+                "invalid data in key '400' ; must be an array",
+            );
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.config.json"));
+        });
+    });
+
+    // invalid array value
+    describe("invalid value", () => {
+        before(() => {
+            const configFileData = {
+                400: [0, 2],
+            };
+
+            writeFileSync(
+                resolve(appRoot.path, "error.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+        });
+
+        it("expect to throw invalid data", function () {
+            expect(init).to.throw(
+                Error,
+                "invalid data values ; array must contain only string values",
+            );
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.config.json"));
+        });
+    });
+
+    // duplicate keys
+    describe("duplicate keys", () => {
+        before(() => {
+            const configFileData = {
+                400: ["error1"],
+                500: ["error2", "error1"],
+            };
+
+            writeFileSync(
+                resolve(appRoot.path, "error.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+        });
+
+        it("expect to throw duplicate keys", function () {
+            expect(init).to.throw(Error, "duplicate keys found - error1");
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.config.json"));
         });
     });
 });
