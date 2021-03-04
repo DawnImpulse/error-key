@@ -295,3 +295,135 @@ describe("with extra codes", () => {
         });
     });
 });
+
+describe("with diff file name", () => {
+    describe("+ve tests", () => {
+        // config data
+        const configFileData = {
+            666: ["error1", "error2"],
+            888: ["error3"],
+        };
+
+        before(() => {
+            // write config file to root
+            writeFileSync(
+                resolve(appRoot.path, "error.key.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+            // initialize
+            init([666, 888], "error.key.config.json");
+        });
+
+        // keys functions
+        describe("keys", () => {
+            // contain 4 keys
+            it("expect keys fn to return 3 keys", function () {
+                expect(Object.keys(keys())).to.have.lengthOf(3);
+            });
+
+            // contain same keys as given
+            it("expect to return same keys", function () {
+                const originalKeys = ["error1", "error2", "error3"];
+                expect(Object.keys(keys())).to.eql(originalKeys);
+            });
+
+            // key value should match expected result
+            it("expect values to match", function () {
+                const values = [6661011, 6661012, 8881021];
+                expect(Object.values(keys())).to.eql(values);
+            });
+        });
+
+        // map function
+        describe("map", () => {
+            let map1;
+
+            before(() => {
+                map1 = map();
+            });
+
+            // map should match expected
+            it("expect map to match", function () {
+                expect(map1).to.eql({
+                    666: { error1: 6661011, error2: 6661012 },
+                    888: { error3: 8881021 },
+                });
+            });
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.key.config.json"));
+        });
+    });
+
+    describe("-ve tests", () => {
+        // config data
+        const configFileData = {
+            666: ["error1", "error2"],
+            888: ["error3"],
+        };
+
+        before(() => {
+            // write config file to root
+            writeFileSync(
+                resolve(appRoot.path, "error.key.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+            // initialize
+            init([666, 888], "error.key.config.json");
+        });
+
+        // keys functions
+        describe("keys", () => {
+            // not contain 4 keys
+            it("expect keys fn to not return 2 keys", function () {
+                expect(Object.keys(keys())).to.not.have.lengthOf(2);
+            });
+
+            // not contain different keys
+            it("expect to not return different keys", function () {
+                const originalKeys = ["error5", "error6", "error7"];
+                expect(Object.keys(keys())).to.not.eql(originalKeys);
+            });
+
+            // key value should match expected result
+            it("expect values to not match", function () {
+                const values = [4001012, 4001013, 5001024];
+                expect(Object.values(keys())).to.not.eql(values);
+            });
+        });
+
+        // map function
+        describe("map", () => {
+            let map1;
+
+            before(() => {
+                map1 = map();
+            });
+
+            // map should match expected
+            it("expect map to not match", function () {
+                expect(map1).to.not.eql({
+                    401: { error1: 4001011, error101: 4001012 },
+                    502: { internal1: 5001021, internal201: 5001022 },
+                });
+            });
+
+            it("expect map to not have different prop keys", function () {
+                expect(map1).to.not.have.property("d1");
+            });
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.key.config.json"));
+        });
+    });
+});
