@@ -149,3 +149,149 @@ describe("with defaults testing", () => {
         });
     });
 });
+
+describe("with extra codes", () => {
+    describe("+ve tests", () => {
+        // config data
+        const configFileData = {
+            777: ["error1", "error101"],
+            888: ["internal1", "internal201"],
+            999: ["internal3"],
+        };
+
+        before(() => {
+            // write config file to root
+            writeFileSync(
+                resolve(appRoot.path, "error.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+            // initialize
+            init([777, 888, 999]);
+        });
+
+        // keys functions
+        describe("keys", () => {
+            // contain 4 keys
+            it("expect keys fn to return 5 keys", function () {
+                expect(Object.keys(keys())).to.have.lengthOf(5);
+            });
+
+            // contain same keys as given
+            it("expect to return same keys", function () {
+                const originalKeys = [
+                    "error1",
+                    "error101",
+                    "internal1",
+                    "internal201",
+                    "internal3",
+                ];
+                expect(Object.keys(keys())).to.eql(originalKeys);
+            });
+
+            // key value should match expected result
+            it("expect values to match", function () {
+                const values = [7771011, 7771012, 8881021, 8881022, 9991031];
+                expect(Object.values(keys())).to.eql(values);
+            });
+        });
+
+        // map function
+        describe("map", () => {
+            let map1;
+
+            before(() => {
+                map1 = map();
+            });
+
+            // map should match expected
+            it("expect map to match", function () {
+                expect(map1).to.eql({
+                    777: { error1: 7771011, error101: 7771012 },
+                    888: { internal1: 8881021, internal201: 8881022 },
+                    999: { internal3: 9991031 },
+                });
+            });
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.config.json"));
+        });
+    });
+
+    describe("-ve tests", () => {
+        // config data
+        const configFileData = {
+            777: ["error1", "error101"],
+            888: ["internal1", "internal201"],
+            999: ["internal3"],
+        };
+
+        before(() => {
+            // write config file to root
+            writeFileSync(
+                resolve(appRoot.path, "error.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+            // initialize
+            init([777, 888, 999]);
+        });
+
+        // keys functions
+        describe("keys", () => {
+            // not contain 4 keys
+            it("expect keys fn to not return 4 keys", function () {
+                expect(Object.keys(keys())).to.not.have.lengthOf(4);
+            });
+
+            // not contain different keys
+            it("expect to not return different keys", function () {
+                const originalKeys = [
+                    "error2",
+                    "error201",
+                    "internal3",
+                    "internal301",
+                ];
+                expect(Object.keys(keys())).to.not.eql(originalKeys);
+            });
+
+            // key value should match expected result
+            it("expect values to not match", function () {
+                const values = [4001012, 4001013, 5001024, 5001025];
+                expect(Object.values(keys())).to.not.eql(values);
+            });
+        });
+
+        // map function
+        describe("map", () => {
+            let map1;
+
+            before(() => {
+                map1 = map();
+            });
+
+            // map should match expected
+            it("expect map to not match", function () {
+                expect(map1).to.not.eql({
+                    401: { error1: 4001011, error101: 4001012 },
+                    502: { internal1: 5001021, internal201: 5001022 },
+                });
+            });
+
+            it("expect map to not have different prop keys", function () {
+                expect(map1).to.not.have.property("a");
+            });
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.config.json"));
+        });
+    });
+});

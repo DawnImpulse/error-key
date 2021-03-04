@@ -30,7 +30,7 @@ export default class Validations {
      * @param extraCodes
      */
     constructor(extraCodes: number[]) {
-        this.oValidKeys.concat(extraCodes);
+        this.oValidKeys = this.oValidKeys.concat(extraCodes);
         this.validKeys = this.oValidKeys.map(String);
     }
 

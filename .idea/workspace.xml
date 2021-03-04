@@ -58,7 +58,7 @@
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key" />
     </key>
   </component>
-  <component name="RunManager" selected="Mocha.with defaults testing.+ve tests.map.expect map have same outline">
+  <component name="RunManager" selected="Mocha.with defaults testing.-ve tests">
     <configuration name="with defaults testing" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -74,7 +74,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="with defaults testing.+ve tests.expect to return same keys" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="with defaults testing.-ve tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -82,12 +82,11 @@
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
       <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>TEST</test-kind>
+      <test-kind>SUITE</test-kind>
       <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
       <test-names>
         <name value="with defaults testing" />
-        <name value="+ve tests" />
-        <name value="expect to return same keys" />
+        <name value="-ve tests" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -146,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.with defaults testing.-ve tests" />
         <item itemvalue="Mocha.with defaults testing.+ve tests.map.expect map have same outline" />
         <item itemvalue="Mocha.with defaults testing.+ve tests.keys.expect values to match" />
         <item itemvalue="Mocha.with defaults testing.+ve tests.keys" />
         <item itemvalue="Mocha.with defaults testing" />
-        <item itemvalue="Mocha.with defaults testing.+ve tests.expect to return same keys" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +167,7 @@
       <workItem from="1614832857173" duration="4276000" />
       <workItem from="1614839011061" duration="1567000" />
       <workItem from="1614841559752" duration="9461000" />
-      <workItem from="1614860826854" duration="1003000" />
+      <workItem from="1614860826854" duration="1391000" />
     </task>
     <servers />
   </component>
@@ -176,26 +175,26 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1614852789742">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1614862218751">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614852789742" />
-    <state width="1893" height="254" key="GridCell.Tab.0.bottom" timestamp="1614861756400">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614862218751" />
+    <state width="1893" height="254" key="GridCell.Tab.0.bottom" timestamp="1614862183549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614861756400" />
-    <state width="1893" height="254" key="GridCell.Tab.0.center" timestamp="1614861756400">
+    <state width="1893" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614862183549" />
+    <state width="1893" height="254" key="GridCell.Tab.0.center" timestamp="1614862183548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614861756400" />
-    <state width="1893" height="254" key="GridCell.Tab.0.left" timestamp="1614861756400">
+    <state width="1893" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614862183548" />
+    <state width="1893" height="254" key="GridCell.Tab.0.left" timestamp="1614862183548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614861756400" />
-    <state width="1893" height="254" key="GridCell.Tab.0.right" timestamp="1614861756400">
+    <state width="1893" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614862183548" />
+    <state width="1893" height="254" key="GridCell.Tab.0.right" timestamp="1614862183548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614861756400" />
+    <state width="1893" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614862183548" />
     <state x="351" y="78" key="SettingsEditor" timestamp="1614783867957">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
