@@ -1,10 +1,10 @@
 /**
  * @info use for mapping of unique names to ids
  */
-import constant from "./constant";
 
 export default class Mapping {
     private readonly map: object;
+    private readonly keys: object;
     private objKey: number = 100;
 
     /**
@@ -13,6 +13,7 @@ export default class Mapping {
      */
     constructor(config: object) {
         this.map = {};
+        this.keys = {};
         this.parse(config);
     }
 
@@ -20,7 +21,7 @@ export default class Mapping {
      * parse configuration object to map
      * we will append parent key (error code) name with unique value
      * eg 4011001 - here 401 is error code, 100 is obj key & 1 is error key
-     * externally 11001 will be returned as error key
+     * externally 1001 will be returned as error key
      * @param config - configuration object
      * @private
      */
@@ -30,8 +31,24 @@ export default class Mapping {
             const oid = ++this.objKey;
             let eid = 0;
             config[key].forEach((el) => {
-                this.map[key][el] = Number(`${key}${oid}${++eid}`);
+                const value = Number(`${key}${oid}${++eid}`);
+                this.map[key][el] = value;
+                this.keys[el] = value;
             });
         });
+    }
+
+    /**
+     * get all unique key values object
+     */
+    keyValues(): object {
+        return this.keys;
+    }
+
+    /**
+     * get complete key/value map
+     */
+    getMap(): object {
+        return this.map;
     }
 }

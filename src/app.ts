@@ -30,10 +30,15 @@ export function init(
 }
 
 /**
- * used to generate unique id
- * you need to pass a unique name to this function
- * so it can create a map of unique ids -> name
- * which can be referenced later on (for debugging, referencing etc)
- * @param name - generate unique id for corresponding name
+ * get all unique keys with values
  */
-export function genId(name: string) {}
+export function key(): object {
+    return mapping.keyValues();
+}
+
+/**
+ * get complete json mapping (with values)
+ */
+export function map(): object {
+    return mapping.getMap();
+}
