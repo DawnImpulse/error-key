@@ -13,7 +13,9 @@ const mapping = new Mapping();
  */
 export function init(name: string = "error-keys") {
     const map = get(name);
-    if (map) throw new Error("configuration object/file not provided");
+    if (!map) throw new Error("configuration object/file not provided");
+    if (typeof map !== "object")
+        throw new Error("configuration must be an object");
     // #todo generate internal key/value pairs
 }
 
