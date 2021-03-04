@@ -4,7 +4,7 @@
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import Mapping from "./utils/mapping";
-import rootPath from "app-root-path";
+import appRoot from "app-root-path";
 import Validations from "./utils/validations";
 
 let mapping: Mapping;
@@ -21,7 +21,7 @@ export function init(
     name: string = "error.config.json",
 ) {
     // read config file
-    const map = readFileSync(resolve(rootPath, name), "utf-8");
+    const map = readFileSync(resolve(appRoot.path, name), "utf-8");
     // validate config file
     validations = new Validations(extraCodes);
     validations.config(JSON.parse(map)).unique();
@@ -32,7 +32,7 @@ export function init(
 /**
  * get all unique keys with values
  */
-export function key(): object {
+export function keys(): object {
     return mapping.keyValues();
 }
 

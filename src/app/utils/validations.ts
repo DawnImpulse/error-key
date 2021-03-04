@@ -46,7 +46,7 @@ export default class Validations {
                     `invalid key '${key}' ; kindly provide a valid key (read error-key docs for help)`,
                 );
             // check if value of key is an array
-            if (!typeOf(config[key] === constant.ARRAY))
+            if (typeOf(config[key]) !== constant.ARRAY)
                 throw new Error(
                     `invalid data in key '${key}' ; must be an array`,
                 );
