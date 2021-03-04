@@ -27,12 +27,23 @@ export default class Mapping {
     }
 
     /**
-     * parse configuration object to map
-     * @param config
-     * @param key
+     * increment place value
+     * @param number
      * @private
      */
-    private parse(config: object, key: string = "") {
+    private numIncrease(number) {
+        const length = number.toString().length;
+    }
+
+    /**
+     * parse configuration object to map
+     * @param config - configuration object
+     * @param key - mapping key
+     * @param num - mapping number
+     * @private
+     */
+    private parse(config: object, key: string = "", num: number = 0) {
+        let number = num;
         Object.keys(config).forEach((el) => {
             switch (config[el]) {
                 // array
@@ -42,11 +53,11 @@ export default class Mapping {
                     );
                 // object
                 case constant.OBJECT:
-                    this.parse(config[el], this.key(key, el));
+                    this.parse(config[el], this.key(key, el), number);
                     break;
+                // assign unique mapping number
                 default:
-                    // #todo unique number
-                    this.map[this.key(key, el)] = 0;
+                    this.map[this.key(key, el)] = ++number;
             }
         });
     }

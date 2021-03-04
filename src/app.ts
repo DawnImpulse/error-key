@@ -1,10 +1,14 @@
 /**
  * @info default entry point
  */
-import { get } from "config";
+import { readFileSync } from "fs";
+import { resolve } from "path";
 import Mapping from "./utils/mapping";
+import rootPath from "app-root-path";
+import typeOf from "./utils/typeOf";
+import constant from "./utils/constant";
 
-const mapping = new Mapping();
+let mapping: Mapping;
 
 /**
  * initialize error key module
@@ -12,11 +16,10 @@ const mapping = new Mapping();
  * @throws Error - in case config not provided
  */
 export function init(name: string = "error-keys") {
-    const map = get(name);
-    if (!map) throw new Error("configuration object/file not provided");
-    if (typeof map !== "object")
-        throw new Error("configuration must be an object");
-    // #todo generate internal key/value pairs
+    // read config file
+    const map = readFileSync(resolve(rootPath, "error.config.json"), "utf-8");
+    // creating internal mappings
+    mapping = new Mapping(JSON.parse(map));
 }
 
 /**
