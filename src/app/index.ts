@@ -42,3 +42,7 @@ export function keys(): object {
 export function map(): object {
     return mapping.getMap();
 }
+
+// todo - map should only contain unique errorCode without statusCode
+// todo - custom errorCode should be < 1000
+// todo - parsing statusCode from errorCode

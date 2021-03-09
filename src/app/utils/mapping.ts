@@ -31,9 +31,8 @@ export default class Mapping {
             const oid = ++this.objKey;
             let eid = 0;
             config[key].forEach((el) => {
-                const value = Number(`${key}${oid}${++eid}`);
-                this.map[key][el] = value;
-                this.keys[el] = value;
+                this.map[key][el] = Number(`${oid}${++eid}`);
+                this.keys[el] = Number(`${key}${oid}${eid}`);
             });
         });
     }

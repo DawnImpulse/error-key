@@ -9,8 +9,7 @@
     "package": "",
     "deploy": "",
     "test": "mocha --require ts-node/register 'src/tests' --config .mocharc.js --require source-map-support/register",
-    "test:coverage" : "nyc npm test",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "coverage" : "nyc npm test"
   },
   "keywords": [
     "error",

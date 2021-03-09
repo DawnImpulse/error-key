@@ -65,8 +65,8 @@ describe("with defaults testing", () => {
             // map should match expected
             it("expect map to match", function () {
                 expect(map1).to.eql({
-                    400: { error1: 4001011, error101: 4001012 },
-                    500: { internal1: 5001021, internal201: 5001022 },
+                    400: { error1: 1011, error101: 1012 },
+                    500: { internal1: 1021, internal201: 1022 },
                 });
             });
         });
@@ -209,9 +209,9 @@ describe("with extra codes", () => {
             // map should match expected
             it("expect map to match", function () {
                 expect(map1).to.eql({
-                    777: { error1: 7771011, error101: 7771012 },
-                    888: { internal1: 8881021, internal201: 8881022 },
-                    999: { internal3: 9991031 },
+                    777: { error1: 1011, error101: 1012 },
+                    888: { internal1: 1021, internal201: 1022 },
+                    999: { internal3: 1031 },
                 });
             });
         });
@@ -348,8 +348,8 @@ describe("with diff file name", () => {
             // map should match expected
             it("expect map to match", function () {
                 expect(map1).to.eql({
-                    666: { error1: 6661011, error2: 6661012 },
-                    888: { error3: 8881021 },
+                    666: { error1: 1011, error2: 1012 },
+                    888: { error3: 1021 },
                 });
             });
         });
