@@ -12,6 +12,11 @@ import { types } from "util";
 let mapping: Mapping;
 let validations: Validations;
 
+export interface ActualCode {
+    status: number;
+    error: number;
+}
+
 /**
  * initialize error key module
  * @param name - (not required) if provided a different name of file
@@ -50,5 +55,24 @@ export function map(): object {
     return mapping.getMap();
 }
 
-// todo - custom errorCode should be < 1000
+/**
+ * return actual statusCode & error code for external output
+ * @param errorCode
+ * @return ActualCode
+ */
+export function codes(errorCode: number): ActualCode {
+    // to check if given code is valid or not
+    if (errorCode.toString().length < 7)
+        throw new Error(`invalid errorCode '${errorCode}'`);
+    // extract status code
+    const status = Number(errorCode.toString().substr(0, 3));
+    // extract error code
+    const error = Number(errorCode.toString().substr(3));
+
+    return {
+        status,
+        error,
+    };
+}
+
 // todo - parsing statusCode from errorCode

@@ -6,7 +6,7 @@ import appRoot from "app-root-path";
 import { writeFileSync, unlinkSync } from "fs";
 import { resolve } from "path";
 import { expect } from "chai";
-import { init, keys, map } from "../app";
+import { ActualCode, codes, init, keys, map } from "../app";
 
 describe("with defaults testing", () => {
     describe("+ve tests", () => {
@@ -67,6 +67,35 @@ describe("with defaults testing", () => {
                 expect(map1).to.eql({
                     400: { error1: 1011, error101: 1012 },
                     500: { internal1: 1021, internal201: 1022 },
+                });
+            });
+        });
+
+        // codes function
+        describe("code", () => {
+            let code;
+
+            before(() => {
+                code = codes(4001001);
+            });
+
+            // expect it to contain status & error code
+            it("expect it to contain status & error code", function () {
+                expect(code).to.have.property("status");
+                expect(code).to.have.property("error");
+            });
+
+            // expect status code to be 400
+            it("expect status code to be 400", function () {
+                expect(code).to.include({
+                    status: 400,
+                });
+            });
+
+            // expect error code to be 1001
+            it("expect error code to be 1001", function () {
+                expect(code).to.include({
+                    error: 1001,
                 });
             });
         });
@@ -140,6 +169,17 @@ describe("with defaults testing", () => {
 
             it("expect map to not have different prop keys", function () {
                 expect(map1).to.not.have.property("a");
+            });
+        });
+
+        // codes function
+        describe("code", () => {
+            // expect to throw invalid errorCode
+            it("expect to throw invalid errorCode", function () {
+                function fn() {
+                    return codes(500);
+                }
+                expect(fn).to.throw(Error, "invalid errorCode '500'");
             });
         });
 
