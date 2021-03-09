@@ -459,6 +459,67 @@ describe("invalid cases", () => {
         });
     });
 
+    // key not a number
+    describe("key not a number", () => {
+        before(() => {
+            // config data
+            const configFileData = {
+                777: ["error1"],
+            };
+
+            writeFileSync(
+                resolve(appRoot.path, "error.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+        });
+
+        it("expect to throw invalid key", function () {
+            function fn() {
+                // @ts-ignore
+                init(["hello"]);
+            }
+            expect(fn).to.throw(Error, "hello is not a number");
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.config.json"));
+        });
+    });
+
+    // key not in range
+    describe("key not in range", () => {
+        before(() => {
+            // config data
+            const configFileData = {
+                1013: ["error1"],
+            };
+
+            writeFileSync(
+                resolve(appRoot.path, "error.config.json"),
+                JSON.stringify(configFileData, null, 4),
+                {
+                    encoding: "utf-8",
+                },
+            );
+        });
+
+        it("expect to throw invalid key", function () {
+            function fn() {
+                init([1013]);
+            }
+            expect(fn).to.throw(Error, "custom status code must be < 1000");
+        });
+
+        // delete config file from root
+        after(() => {
+            unlinkSync(resolve(appRoot.path, "error.config.json"));
+        });
+    });
+
     // invalid data
     describe("invalid data", () => {
         before(() => {

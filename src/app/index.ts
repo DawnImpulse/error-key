@@ -6,6 +6,8 @@ import { resolve } from "path";
 import Mapping from "./utils/mapping";
 import appRoot from "app-root-path";
 import Validations from "./utils/validations";
+import typeOf from "./utils/typeOf";
+import { types } from "util";
 
 let mapping: Mapping;
 let validations: Validations;
@@ -20,6 +22,11 @@ export function init(
     extraCodes: number[] = [],
     name: string = "error.config.json",
 ) {
+    // custom errorCode should be < 1000
+    extraCodes.forEach((el) => {
+        if (typeof el !== "number") throw new Error(`${el} is not a number`);
+        if (el >= 1000) throw new Error(`custom status code must be < 1000`);
+    });
     // read config file
     const map = readFileSync(resolve(appRoot.path, name), "utf-8");
     // validate config file
@@ -43,6 +50,5 @@ export function map(): object {
     return mapping.getMap();
 }
 
-// todo - map should only contain unique errorCode without statusCode
 // todo - custom errorCode should be < 1000
 // todo - parsing statusCode from errorCode
