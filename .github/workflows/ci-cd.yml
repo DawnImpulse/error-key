@@ -2,7 +2,7 @@ name: CI-CD
 on:
   push:
     branches:
-      - master
+      - 'master'
 jobs:
 
 # test the code with different versions of node
