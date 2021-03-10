@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c21b6ba-fdc6-43fd-b1ff-f3f52059c89e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.npmignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodemon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/index.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +63,17 @@
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src\app" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.coverage">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="coverage" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -97,23 +111,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="with defaults testing.+ve tests.code" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
-      <test-names>
-        <name value="with defaults testing" />
-        <name value="+ve tests" />
-        <name value="code" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="with defaults testing.+ve tests.code.expect error code to be 1001" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -134,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.coverage" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.test" />
+        <item itemvalue="npm.coverage" />
         <item itemvalue="Mocha.with defaults testing.-ve tests.code" />
         <item itemvalue="Mocha.with defaults testing.+ve tests.code.expect error code to be 1001" />
-        <item itemvalue="Mocha.with defaults testing.+ve tests.code" />
       </list>
     </recent_temporary>
   </component>
@@ -158,7 +155,9 @@
       <workItem from="1614841559752" duration="9461000" />
       <workItem from="1614860826854" duration="10319000" />
       <workItem from="1614931419883" duration="2462000" />
-      <workItem from="1615283681111" duration="14659000" />
+      <workItem from="1615283681111" duration="14726000" />
+      <workItem from="1615364917973" duration="516000" />
+      <workItem from="1615372773878" duration="1383000" />
     </task>
     <servers />
   </component>
@@ -170,30 +169,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614873591993" />
-    <state x="676" y="298" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615286118406">
+    <state x="676" y="298" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615373810665">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="676" y="298" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615286118406" />
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614872276768">
+    <state x="676" y="298" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615373810665" />
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615373511502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614872276768" />
-    <state width="1893" height="430" key="GridCell.Tab.0.bottom" timestamp="1615302749451">
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615373511502" />
+    <state width="1893" height="430" key="GridCell.Tab.0.bottom" timestamp="1615373717410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="430" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615302749451" />
-    <state width="1893" height="430" key="GridCell.Tab.0.center" timestamp="1615302749451">
+    <state width="1893" height="430" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615373717410" />
+    <state width="1893" height="430" key="GridCell.Tab.0.center" timestamp="1615373717410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="430" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615302749451" />
-    <state width="1893" height="430" key="GridCell.Tab.0.left" timestamp="1615302749451">
+    <state width="1893" height="430" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615373717410" />
+    <state width="1893" height="430" key="GridCell.Tab.0.left" timestamp="1615373717410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="430" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615302749451" />
-    <state width="1893" height="430" key="GridCell.Tab.0.right" timestamp="1615302749451">
+    <state width="1893" height="430" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615373717410" />
+    <state width="1893" height="430" key="GridCell.Tab.0.right" timestamp="1615373717410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="430" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615302749451" />
+    <state width="1893" height="430" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615373717410" />
     <state x="351" y="78" key="SettingsEditor" timestamp="1614783867957">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

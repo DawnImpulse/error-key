@@ -4,10 +4,7 @@
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import Mapping from "./utils/mapping";
-import appRoot from "app-root-path";
 import Validations from "./utils/validations";
-import typeOf from "./utils/typeOf";
-import { types } from "util";
 
 let mapping: Mapping;
 let validations: Validations;
@@ -33,7 +30,7 @@ export function init(
         if (el >= 1000) throw new Error(`custom status code must be < 1000`);
     });
     // read config file
-    const map = readFileSync(resolve(appRoot.path, name), "utf-8");
+    const map = readFileSync(resolve(process.env.INIT_CWD, name), "utf-8");
     // validate config file
     validations = new Validations(extraCodes);
     validations.config(JSON.parse(map)).unique();

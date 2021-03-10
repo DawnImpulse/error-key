@@ -1,12 +1,11 @@
 /**
  * @info main test file
  */
-import { before, beforeEach, afterEach, after, describe, it } from "mocha";
-import appRoot from "app-root-path";
-import { writeFileSync, unlinkSync } from "fs";
+import { after, before, describe, it } from "mocha";
+import { unlinkSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { expect } from "chai";
-import { ActualCode, codes, init, keys, map } from "../app";
+import { codes, init, keys, map } from "../app";
 
 describe("with defaults testing", () => {
     describe("+ve tests", () => {
@@ -19,7 +18,7 @@ describe("with defaults testing", () => {
         before(() => {
             // write config file to root
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -102,7 +101,7 @@ describe("with defaults testing", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
@@ -116,7 +115,7 @@ describe("with defaults testing", () => {
         before(() => {
             // write config file to root
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -185,7 +184,7 @@ describe("with defaults testing", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 });
@@ -202,7 +201,7 @@ describe("with extra codes", () => {
         before(() => {
             // write config file to root
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -258,7 +257,7 @@ describe("with extra codes", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
@@ -273,7 +272,7 @@ describe("with extra codes", () => {
         before(() => {
             // write config file to root
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -331,7 +330,7 @@ describe("with extra codes", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 });
@@ -347,7 +346,7 @@ describe("with diff file name", () => {
         before(() => {
             // write config file to root
             writeFileSync(
-                resolve(appRoot.path, "error.key.config.json"),
+                resolve(process.env.INIT_CWD, "error.key.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -396,7 +395,7 @@ describe("with diff file name", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.key.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.key.config.json"));
         });
     });
 
@@ -410,7 +409,7 @@ describe("with diff file name", () => {
         before(() => {
             // write config file to root
             writeFileSync(
-                resolve(appRoot.path, "error.key.config.json"),
+                resolve(process.env.INIT_CWD, "error.key.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -463,7 +462,7 @@ describe("with diff file name", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.key.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.key.config.json"));
         });
     });
 });
@@ -478,7 +477,7 @@ describe("invalid cases", () => {
             };
 
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -495,7 +494,7 @@ describe("invalid cases", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
@@ -508,7 +507,7 @@ describe("invalid cases", () => {
             };
 
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -526,7 +525,7 @@ describe("invalid cases", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
@@ -539,7 +538,7 @@ describe("invalid cases", () => {
             };
 
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -556,7 +555,7 @@ describe("invalid cases", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
@@ -568,7 +567,7 @@ describe("invalid cases", () => {
             };
 
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -585,7 +584,7 @@ describe("invalid cases", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
@@ -597,7 +596,7 @@ describe("invalid cases", () => {
             };
 
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -614,7 +613,7 @@ describe("invalid cases", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
@@ -627,7 +626,7 @@ describe("invalid cases", () => {
             };
 
             writeFileSync(
-                resolve(appRoot.path, "error.config.json"),
+                resolve(process.env.INIT_CWD, "error.config.json"),
                 JSON.stringify(configFileData, null, 4),
                 {
                     encoding: "utf-8",
@@ -641,7 +640,7 @@ describe("invalid cases", () => {
 
         // delete config file from root
         after(() => {
-            unlinkSync(resolve(appRoot.path, "error.config.json"));
+            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 });
