@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c21b6ba-fdc6-43fd-b1ff-f3f52059c89e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.npmignore" beforeDir="false" afterPath="$PROJECT_DIR$/.npmignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/deploy.sh" beforeDir="false" />
     </list>
@@ -31,7 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.github" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -49,13 +51,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key" />
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\scripts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src" />
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src\app" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\.github" />
+      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key" />
+      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\scripts" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build">
@@ -153,6 +156,7 @@
       <workItem from="1615283681111" duration="14726000" />
       <workItem from="1615364917973" duration="516000" />
       <workItem from="1615372773878" duration="1774000" />
+      <workItem from="1615376748649" duration="460000" />
     </task>
     <servers />
   </component>
