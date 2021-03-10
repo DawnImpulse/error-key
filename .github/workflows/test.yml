@@ -1,5 +1,4 @@
 name: Test
-description: test code on latest node version
 on:
   push:
     branches:
