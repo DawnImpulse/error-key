@@ -2,7 +2,7 @@ name: Test
 on:
   push:
     branches:
-      - 'develop'
+    - develop
 jobs:
   testing:
     name: Testing
@@ -35,7 +35,7 @@ jobs:
 
 #       installing dependencies if cache hit fails
         - name: Installing Dependencies (3/3 - install if no cache hit)
-          if: steps.yarn-cache.outputs.cache-hit != 'true'
+#          if: steps.yarn-cache.outputs.cache-hit != 'true'
           run: yarn install
 
 #       test the code
