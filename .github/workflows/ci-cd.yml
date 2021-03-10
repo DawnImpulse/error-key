@@ -1,0 +1,125 @@
+name: CI-CD
+on:
+  push:
+    branches:
+      - master
+jobs:
+
+# test the code with different versions of node
+  testing:
+    name: Testing
+    description: setup/build/test code in multiple Node environments
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [
+              '8',
+              '10',
+              '12',
+              '14',
+              '15'
+        ]
+      name: Testing on Node v${{ matrix.node }}
+      steps:
+
+#         checkout the source code
+        - name: Checkout Code
+          uses: actions/checkout@v2
+
+#         setup node environment
+        - name: Setup Node
+          uses: actions/setup-node@v2
+          with:
+            node-version: ${{ matrix.node }}
+
+#         get yarn cache directory path
+        - name: Installing Dependencies (1/3 - get yarn cache path)
+          id: yarn-cache-dir-path
+          run: echo "::set-output name=dir::$(yarn cache dir)"
+
+#         checking / setting up the cache
+        - name: Installing Dependencies (2/3 - checking/setting up cache)
+          uses: actions/cache@v2
+          id: yarn-cache
+          with:
+            path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-yarn-
+
+#         installing dependencies if cache hit fails
+        - name: Installing Dependencies (3/3 - install if no cache hit)
+          if: steps.yarn-cache.outputs.cache-hit != 'true'
+          run: yarn install
+
+#         test the code
+        - name: Testing Code (with coverage)
+          run: npm run coverage
+
+#         upload coverage to codecov
+        - name: Code Coverage
+            uses: codecov/codecov-action@v1
+            with:
+              fail_ci_if_error: true
+
+#         prepare for coveralls code coverage (next job)
+#          - name: Coveralls Parallel
+#              uses: coverallsapp/github-action@master
+#              with:
+#                github-token: ${{ secrets.github_token }}
+#                flag-name: run-${{ matrix.node }}
+#                parallel: true
+
+
+# send code coverage to coveralls.io
+#  coverage:
+#    needs: testing
+#    name: Code Coverage
+#    description: pass code coverage to coveralls.io
+#    runs-on: ubuntu-latest
+#      steps:
+#          - name: Coveralls Finished
+#            uses: coverallsapp/github-action@master
+#            with:
+#              github-token: ${{ secrets.github_token }}
+#              parallel-finished: true
+
+
+# deploying on npm
+  deploy:
+    needs: testing
+    name: Deploy to NPM
+    description: deploying our package to npm
+    steps:
+#     checkout the source code
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+#     get yarn cache directory path
+      - name: Installing Dependencies (1/3 - get yarn cache path)
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+#     checking / setting up the cache
+      - name: Installing Dependencies (2/3 - checking/setting up cache)
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+#     installing dependencies if cache hit fails
+      - name: Installing Dependencies (3/3 - install if no cache hit)
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Build the project
+        run: npm run build
+
+#     publish the package
+      - name: Publishing to NPM
+      - uses: JS-DevTools/npm-publish@v1
+          with:
+            token: ${{ secrets.NPM_TOKEN }}

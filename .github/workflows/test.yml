@@ -3,7 +3,7 @@ description: test code on latest node version
 on:
   push:
     branches:
-      - deploy
+      - develop
 jobs:
   testing:
     name: Testing
