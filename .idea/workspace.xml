@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c21b6ba-fdc6-43fd-b1ff-f3f52059c89e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/test.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.npmignore" beforeDir="false" afterPath="$PROJECT_DIR$/.npmignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/deploy.sh" beforeDir="false" />
-    </list>
+    <list default="true" id="5c21b6ba-fdc6-43fd-b1ff-f3f52059c89e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +47,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\.github\workflows" />
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src" />
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src\app" />
     </key>
@@ -156,7 +152,7 @@
       <workItem from="1615283681111" duration="14726000" />
       <workItem from="1615364917973" duration="516000" />
       <workItem from="1615372773878" duration="1774000" />
-      <workItem from="1615376748649" duration="460000" />
+      <workItem from="1615376748649" duration="794000" />
     </task>
     <servers />
   </component>

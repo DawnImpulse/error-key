@@ -6,9 +6,9 @@ on:
       - deploy
 jobs:
   testing:
-    - name: Testing
-      runs-on: ubuntu-latest
-      steps:
+    name: Testing
+    runs-on: ubuntu-latest
+    steps:
 #       checkout the source code
         - name: Checkout Code
           uses: actions/checkout@v2
