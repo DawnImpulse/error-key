@@ -21,18 +21,17 @@ jobs:
         ]
       name: Testing on Node v${{ matrix.node }}
       steps:
-
-#         checkout the source code
+#       checkout the source code
         - name: Checkout Code
           uses: actions/checkout@v2
 
-#         setup node environment
+#       setup node environment
         - name: Setup Node
           uses: actions/setup-node@v2
           with:
             node-version: ${{ matrix.node }}
 
-#         get yarn cache directory path
+#       get yarn cache directory path
         - name: Installing Dependencies (1/3 - get yarn cache path)
           id: yarn-cache-dir-path
           run: echo "::set-output name=dir::$(yarn cache dir)"
