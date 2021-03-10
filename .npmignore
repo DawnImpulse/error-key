@@ -6,7 +6,6 @@
 dist/tests
 exclude
 node_modules
-scripts
 src
 
 # files
