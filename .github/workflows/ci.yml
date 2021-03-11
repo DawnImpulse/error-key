@@ -1,8 +1,12 @@
-name: CI-CD
+name: CI
 on:
   push:
     branches:
-      - release
+      - master
+  pull_requests:
+    branches:
+      - master
+      - develop
 jobs:
   # test the code with different versions of node
   testing:

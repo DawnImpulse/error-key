@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c21b6ba-fdc6-43fd-b1ff-f3f52059c89e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.versionrc.json" afterDir="false" />
+    <list default="true" id="2fc8eff0-95ec-4678-9cb3-fa267f5a6898" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,20 +13,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1pCvoaplH7gzc9hffvu4yKjFGG4" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1pcEth1hlfKJfMio8adrn0Ic7dB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,48 +24,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/exclude/github-package.yml&#10;C:/Users/Saksham/data/sourcei/node-libs/error-key/exclude/ci-cd.yml" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/exclude" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.github/workflows" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\Saksham\data\sourcei\node-libs\error-key\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Saksham\data\sourcei\node-libs\error-key\node_modules\prettier" />
-    <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="C:\Users\Saksham\data\sourcei\node-libs\error-key\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\.github\workflows" />
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src" />
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\src\app" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\exclude" />
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\.github" />
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key" />
-      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\scripts" />
-    </key>
-  </component>
-  <component name="RunManager" selected="npm.build">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.coverage">
     <configuration name="coverage" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -96,7 +61,22 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="with defaults testing.-ve tests.code" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="invalid cases" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
+      <test-names>
+        <name value="invalid cases" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="with defaults testing" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -108,61 +88,32 @@
       <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
       <test-names>
         <name value="with defaults testing" />
-        <name value="-ve tests" />
-        <name value="code" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="with defaults testing.+ve tests.code.expect error code to be 1001" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
-      <test-names>
-        <name value="with defaults testing" />
-        <name value="+ve tests" />
-        <name value="code" />
-        <name value="expect error code to be 1001" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
-        <item itemvalue="npm.test" />
         <item itemvalue="npm.coverage" />
-        <item itemvalue="Mocha.with defaults testing.-ve tests.code" />
-        <item itemvalue="Mocha.with defaults testing.+ve tests.code.expect error code to be 1001" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="Mocha.with defaults testing" />
+        <item itemvalue="Mocha.invalid cases" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5c21b6ba-fdc6-43fd-b1ff-f3f52059c89e" name="Default Changelist" comment="" />
-      <created>1614700064087</created>
+      <changelist id="2fc8eff0-95ec-4678-9cb3-fa267f5a6898" name="Default Changelist" comment="" />
+      <created>1615474196399</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1614700064087</updated>
-      <workItem from="1614700065627" duration="1449000" />
-      <workItem from="1614783713873" duration="3873000" />
-      <workItem from="1614828857650" duration="3042000" />
-      <workItem from="1614832857173" duration="4276000" />
-      <workItem from="1614839011061" duration="1567000" />
-      <workItem from="1614841559752" duration="9461000" />
-      <workItem from="1614860826854" duration="10319000" />
-      <workItem from="1614931419883" duration="2462000" />
-      <workItem from="1615283681111" duration="14726000" />
-      <workItem from="1615364917973" duration="516000" />
-      <workItem from="1615372773878" duration="1774000" />
-      <workItem from="1615376748649" duration="8621000" />
-      <workItem from="1615470646722" duration="1059000" />
-      <workItem from="1615472137701" duration="696000" />
+      <updated>1615474196399</updated>
+      <workItem from="1615474197920" duration="48000" />
+      <workItem from="1615474248556" duration="179000" />
+      <workItem from="1615474430045" duration="66000" />
+      <workItem from="1615474499112" duration="47000" />
+      <workItem from="1615474548673" duration="32000" />
+      <workItem from="1615474630505" duration="308000" />
     </task>
     <servers />
   </component>
@@ -170,41 +121,29 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1614873591993">
+    <state x="803" y="373" width="516" height="284" key="#ESLint" timestamp="1615474486380">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614873591993" />
-    <state x="676" y="298" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615373810665">
+    <state x="803" y="373" width="516" height="284" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1615474486380" />
+    <state width="1893" height="254" key="GridCell.Tab.0.bottom" timestamp="1615474719984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="676" y="298" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615373810665" />
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615373511502">
+    <state width="1893" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615474719984" />
+    <state width="1893" height="254" key="GridCell.Tab.0.center" timestamp="1615474719984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615373511502" />
-    <state width="1893" height="430" key="GridCell.Tab.0.bottom" timestamp="1615373717410">
+    <state width="1893" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615474719984" />
+    <state width="1893" height="254" key="GridCell.Tab.0.left" timestamp="1615474719984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="430" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615373717410" />
-    <state width="1893" height="430" key="GridCell.Tab.0.center" timestamp="1615373717410">
+    <state width="1893" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615474719984" />
+    <state width="1893" height="254" key="GridCell.Tab.0.right" timestamp="1615474719984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="430" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615373717410" />
-    <state width="1893" height="430" key="GridCell.Tab.0.left" timestamp="1615373717410">
+    <state width="1893" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615474719984" />
+    <state x="351" y="78" key="SettingsEditor" timestamp="1615474542915">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="430" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615373717410" />
-    <state width="1893" height="430" key="GridCell.Tab.0.right" timestamp="1615373717410">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1893" height="430" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615373717410" />
-    <state x="351" y="78" key="SettingsEditor" timestamp="1614783867957">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1614783867957" />
-    <state x="539" y="5" key="search.everywhere.popup" timestamp="1614786190051">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="539" y="5" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614786190051" />
+    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1615474542915" />
   </component>
 </project>
