@@ -8,7 +8,10 @@
     "build": "tsc --project tsconfig.production.json",
     "clean": "del-cli ./dist",
     "test": "mocha --require ts-node/register 'src/tests' --config .mocharc.js --require source-map-support/register",
-    "coverage": "nyc npm test"
+    "coverage": "nyc npm test",
+    "release:major": "standard-version -s --release-as major",
+    "release:minor": "standard-version -s --release-as minor",
+    "release:patch": "standard-version -s --release-as patch"
   },
   "keywords": [
     "error",
@@ -42,6 +45,7 @@
     "nyc": "15.1.0",
     "prettier": "2.2.1",
     "source-map-support": "0.5.19",
+    "standard-version": "^9.1.1",
     "ts-node": "9.1.1",
     "typescript": "4.2.2"
   }

@@ -40,8 +40,11 @@ export function init(
 
 /**
  * get all unique keys with values
+ * although the function return a key-value object
+ * but returning any so if using typescript
+ * @return any
  */
-export function keys(): object {
+export function keys(): any {
     return mapping.keyValues();
 }
 
