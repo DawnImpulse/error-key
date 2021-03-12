@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2fc8eff0-95ec-4678-9cb3-fa267f5a6898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +37,11 @@
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="C:\Users\Saksham\data\sourcei\node-libs\error-key\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\.github\workflows" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.coverage">
     <configuration name="coverage" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -114,6 +117,7 @@
       <workItem from="1615474499112" duration="47000" />
       <workItem from="1615474548673" duration="32000" />
       <workItem from="1615474630505" duration="308000" />
+      <workItem from="1615564748573" duration="651000" />
     </task>
     <servers />
   </component>
