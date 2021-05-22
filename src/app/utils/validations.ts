@@ -45,18 +45,28 @@ export default class Validations {
                 throw new Error(
                     `invalid key '${key}' ; kindly provide a valid key (read error-key docs for help)`,
                 );
-            // check if value of key is an array
-            if (typeOf(config[key]) !== constant.ARRAY)
+            // check if value of key is an array | object
+            if (
+                !(
+                    typeOf(config[key]) === constant.ARRAY ||
+                    typeOf(config[key]) === constant.OBJECT
+                )
+            )
                 throw new Error(
-                    `invalid data in key '${key}' ; must be an array`,
+                    `invalid data in key '${key}' ; must be an array/object`,
                 );
-            // check if all array keys are only string
-            if (!config[key].every((i) => typeOf(i) === constant.STRING))
-                throw new Error(
-                    "invalid data values ; array must contain only string values",
-                );
-            // insert all array keys in top level array
-            this.keys = this.keys.concat(config[key]);
+            // if array, check if all keys are only string
+            if (typeOf(config[key]) === constant.ARRAY)
+                if (!config[key].every((i) => typeOf(i) === constant.STRING))
+                    throw new Error(
+                        "invalid data values ; array must contain only string values",
+                    );
+
+            // if array, insert all array keys in top level array
+            if (typeOf(config[key]) === constant.ARRAY)
+                this.keys = this.keys.concat(config[key]);
+            else this.keys = this.keys.concat(Object.keys(config[key]));
+            // if object, insert all object keys in top level array
         });
         return this;
     }
@@ -65,7 +75,7 @@ export default class Validations {
      * check if all 2nd level key names are all unique
      */
     unique() {
-        let findDuplicates = (arr) =>
+        const findDuplicates = (arr) =>
             arr.filter((item, index) => arr.indexOf(item) != index);
         const set = new Set(findDuplicates(this.keys));
         const dup = Array.from(set.keys());

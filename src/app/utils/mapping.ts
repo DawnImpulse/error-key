@@ -1,11 +1,13 @@
 /**
  * @info use for mapping of unique names to ids
  */
+import constant from "./constant";
+import typeOf from "./typeOf";
 
 export default class Mapping {
     private readonly map: object;
     private readonly keys: object;
-    private objKey: number = 100;
+    private objKey = 100;
 
     /**
      * @constructor
@@ -30,10 +32,16 @@ export default class Mapping {
             this.map[key] = {};
             const oid = ++this.objKey;
             let eid = 0;
-            config[key].forEach((el) => {
-                this.map[key][el] = Number(`${oid}${++eid}`);
-                this.keys[el] = Number(`${key}${oid}${eid}`);
-            });
+            if (typeOf(config[key]) === constant.ARRAY)
+                config[key].forEach((el) => {
+                    this.map[key][el] = Number(`${oid}${++eid}`);
+                    this.keys[el] = Number(`${key}${oid}${eid}`);
+                });
+            else
+                Object.keys(config[key]).forEach((el) => {
+                    this.map[key][el] = Number(`${oid}${++eid}`);
+                    this.keys[el] = Number(`${key}${oid}${eid}`);
+                });
         });
     }
 

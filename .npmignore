@@ -6,6 +6,7 @@
 dist/tests
 exclude
 node_modules
+coverage
 src
 
 # files

@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2fc8eff0-95ec-4678-9cb3-fa267f5a6898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.npmignore" beforeDir="false" afterPath="$PROJECT_DIR$/.npmignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utils/mapping.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/mapping.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utils/validations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/validations.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/index.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Saksham\data\sourcei\node-libs\error-key\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
-    <property name="ts.external.directory.path" value="C:\Users\Saksham\data\sourcei\node-libs\error-key\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\Saksham\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\211.7142.46\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -51,7 +51,17 @@
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\.github\workflows" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.coverage">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="coverage" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -72,37 +82,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="invalid cases" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
-      <test-names>
-        <name value="invalid cases" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="with defaults testing" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
-      <test-names>
-        <name value="with defaults testing" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="with defaults testing.+ve tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="with data object" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -113,18 +93,33 @@
       <test-kind>SUITE</test-kind>
       <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
       <test-names>
-        <name value="with defaults testing" />
-        <name value="+ve tests" />
+        <name value="with data object" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="with data object.with general data" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
+      <test-names>
+        <name value="with data object" />
+        <name value="with general data" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.coverage" />
         <item itemvalue="npm.test" />
-        <item itemvalue="Mocha.with defaults testing.+ve tests" />
-        <item itemvalue="Mocha.with defaults testing" />
-        <item itemvalue="Mocha.invalid cases" />
+        <item itemvalue="Mocha.with data object.with general data" />
+        <item itemvalue="Mocha.with data object" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +146,9 @@
       <workItem from="1621659127048" duration="130000" />
       <workItem from="1621659263893" duration="266000" />
       <workItem from="1621659535844" duration="52000" />
-      <workItem from="1621659592436" duration="1552000" />
+      <workItem from="1621659592436" duration="1928000" />
+      <workItem from="1621664295088" duration="57000" />
+      <workItem from="1621664491980" duration="1632000" />
     </task>
     <servers />
   </component>

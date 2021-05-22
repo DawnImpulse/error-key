@@ -563,7 +563,7 @@ describe("invalid cases", () => {
     describe("invalid data", () => {
         before(() => {
             const configFileData = {
-                400: {},
+                400: "string",
             };
 
             writeFileSync(
@@ -649,7 +649,7 @@ describe("with data object", () => {
     describe("with general data", () => {
         // config data
         const configFileData = {
-            400: ["error1"],
+            400: { error1: "" },
             500: ["internal1"],
         };
 
