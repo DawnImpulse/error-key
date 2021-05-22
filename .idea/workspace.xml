@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fc8eff0-95ec-4678-9cb3-fa267f5a6898" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/index.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +24,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.github/workflows" />
@@ -34,7 +41,8 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Saksham\data\sourcei\node-libs\error-key\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="C:\Users\Saksham\data\sourcei\node-libs\error-key\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -94,10 +102,27 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="with defaults testing.+ve tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
+      <test-names>
+        <name value="with defaults testing" />
+        <name value="+ve tests" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="npm.coverage" />
         <item itemvalue="npm.test" />
+        <item itemvalue="Mocha.with defaults testing.+ve tests" />
         <item itemvalue="Mocha.with defaults testing" />
         <item itemvalue="Mocha.invalid cases" />
       </list>
@@ -117,37 +142,24 @@
       <workItem from="1615474499112" duration="47000" />
       <workItem from="1615474548673" duration="32000" />
       <workItem from="1615474630505" duration="308000" />
-      <workItem from="1615564748573" duration="651000" />
+      <workItem from="1615564748573" duration="958000" />
+      <workItem from="1616672087814" duration="125000" />
+      <workItem from="1621169581663" duration="27000" />
+      <workItem from="1621657923709" duration="136000" />
+      <workItem from="1621658064967" duration="563000" />
+      <workItem from="1621658636226" duration="423000" />
+      <workItem from="1621659127048" duration="130000" />
+      <workItem from="1621659263893" duration="266000" />
+      <workItem from="1621659535844" duration="52000" />
+      <workItem from="1621659592436" duration="1552000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="803" y="373" width="516" height="284" key="#ESLint" timestamp="1615474486380">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="803" y="373" width="516" height="284" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1615474486380" />
-    <state width="1893" height="254" key="GridCell.Tab.0.bottom" timestamp="1615474719984">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615474719984" />
-    <state width="1893" height="254" key="GridCell.Tab.0.center" timestamp="1615474719984">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615474719984" />
-    <state width="1893" height="254" key="GridCell.Tab.0.left" timestamp="1615474719984">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615474719984" />
-    <state width="1893" height="254" key="GridCell.Tab.0.right" timestamp="1615474719984">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1893" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615474719984" />
-    <state x="351" y="78" key="SettingsEditor" timestamp="1615474542915">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1615474542915" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -15,20 +15,24 @@ export interface ActualCode {
 }
 
 /**
+ * parse extra codes
+ * custom errorCode should be < 1000
+ */
+function parseExtraCodes(extraCodes: number[]) {
+    extraCodes.forEach((el) => {
+        if (typeof el !== "number") throw new Error(`${el} is not a number`);
+        if (el >= 1000) throw new Error(`custom status code must be < 1000`);
+    });
+}
+
+/**
  * initialize error key module
  * @param name - (not required) if provided a different name of file
  * @param extraCodes - (not required) if need to provide different error codes
  * @throws Error - any config related issues
  */
-export function init(
-    extraCodes: number[] = [],
-    name: string = "error.config.json",
-) {
-    // custom errorCode should be < 1000
-    extraCodes.forEach((el) => {
-        if (typeof el !== "number") throw new Error(`${el} is not a number`);
-        if (el >= 1000) throw new Error(`custom status code must be < 1000`);
-    });
+export function init(extraCodes: number[] = [], name = "error.config.json") {
+    parseExtraCodes(extraCodes);
     // read config file
     const map = readFileSync(resolve(process.env.INIT_CWD, name), "utf-8");
     // validate config file
@@ -36,6 +40,21 @@ export function init(
     validations.config(JSON.parse(map)).unique();
     // creating internal mappings
     mapping = new Mapping(JSON.parse(map));
+}
+
+/**
+ * initialize error key module from a data object
+ * @param data - (not required) if provided a different name of file
+ * @param extraCodes - (not required) if need to provide different error codes
+ * @throws Error - any config related issues
+ */
+export function initO(extraCodes: number[], data: object) {
+    parseExtraCodes(extraCodes);
+    // validate config file
+    validations = new Validations(extraCodes);
+    validations.config(data).unique();
+    // creating internal mappings
+    mapping = new Mapping(data);
 }
 
 /**
