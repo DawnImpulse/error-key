@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/DawnImpulse/error-key/compare/v0.10.0...v1.0.0) (2023-01-09)
+
+
+### Documentation
+
+* readme ([290c486](https://github.com/DawnImpulse/error-key/commit/290c486fd817f54db220c3a0c38cdc83f5d5c253))
+
 ## 0.10.0 (2023-01-09)
 
 
