@@ -6,7 +6,6 @@ on:
 jobs:
   # test the code with different versions of node
   testing:
-    description: setup/build/test code in multiple Node environments
     runs-on: ubuntu-latest
     strategy:
       matrix:
