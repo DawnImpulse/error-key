@@ -6,15 +6,13 @@ on:
   pull_request:
     branches:
       - master
-      - develop
 jobs:
   # test the code with different versions of node
   testing:
-    description: setup/build/test code in multiple Node environments
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '8','10','12','14','15' ]
+        node: [ '8','10','12','14','16', '18' ]
     name: Testing on Node v${{ matrix.node }}
     steps:
       # checkout the source code

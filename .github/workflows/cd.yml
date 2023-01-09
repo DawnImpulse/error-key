@@ -1,4 +1,4 @@
-name: CI-CD
+name: CD
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '8','10','12','14','16', '18' ]
+        node: [ '18' ]
     name: Testing on Node v${{ matrix.node }}
     steps:
       # checkout the source code
@@ -38,21 +38,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-
-
       # installing dependencies if cache hit fails
       - name: Installing Dependencies (3/3 - install if no cache hit)
         run: yarn install
 
       # test the code
-      - name: Testing Code (with coverage)
-        run: npm run coverage
-
-      # upload coverage to codecov
-      - name: Code Coverage
-        uses: codecov/codecov-action@v1
-        with:
-          fail_ci_if_error: true
+      - name: Testing Code
+        run: npm run test
 
   # publish to npm
   publish-npm:
@@ -77,9 +69,6 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-
-
-
 
       # installing dependencies if cache hit fails
       - name: Installing Dependencies (3/3 - install if no cache hit)

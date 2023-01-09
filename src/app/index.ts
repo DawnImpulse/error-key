@@ -1,8 +1,6 @@
 /**
  * @info default entry point
  */
-import { readFileSync } from "fs";
-import { resolve } from "path";
 import Mapping from "./utils/mapping";
 import Validations from "./utils/validations";
 
@@ -26,29 +24,12 @@ function parseExtraCodes(extraCodes: number[]) {
 }
 
 /**
- * initialize error key module
- * @param name - (not required) if provided a different name of file
- * @param extraCodes - (not required) if need to provide different error codes
- * @throws Error - any config related issues
- */
-export function init(extraCodes: number[] = [], name = "error.config.json") {
-    parseExtraCodes(extraCodes);
-    // read config file
-    const map = readFileSync(resolve(process.env.INIT_CWD, name), "utf-8");
-    // validate config file
-    validations = new Validations(extraCodes);
-    validations.config(JSON.parse(map)).unique();
-    // creating internal mappings
-    mapping = new Mapping(JSON.parse(map));
-}
-
-/**
  * initialize error key module from a data object
  * @param data - (not required) if provided a different name of file
  * @param extraCodes - (not required) if need to provide different error codes
  * @throws Error - any config related issues
  */
-export function initO(extraCodes: number[], data: object) {
+export function initErrors(extraCodes: number[], data: object) {
     parseExtraCodes(extraCodes);
     // validate config file
     validations = new Validations(extraCodes);
@@ -93,5 +74,3 @@ export function codes(errorCode: number): ActualCode {
         error,
     };
 }
-
-// todo - parsing statusCode from errorCode
