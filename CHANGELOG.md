@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/DawnImpulse/error-key/compare/v1.0.0...v1.0.1) (2023-01-09)
+
+
+### Continuous Integration
+
+* ci changes ([16238ad](https://github.com/DawnImpulse/error-key/commit/16238ad29f2c2488f40ca97efd84f6b1a004e312))
+
+
+### Tests
+
+* improved test with new method ([36289da](https://github.com/DawnImpulse/error-key/commit/36289da0b01ae2390aec0cca46962f76fb3b46ef))
+
 ## [1.0.0](https://github.com/DawnImpulse/error-key/compare/v0.10.0...v1.0.0) (2023-01-09)
 
 

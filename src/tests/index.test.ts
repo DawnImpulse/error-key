@@ -1,11 +1,9 @@
 /**
  * @info main test file
  */
-import { after, before, describe, it } from "mocha";
-import { unlinkSync, writeFileSync } from "fs";
-import { resolve } from "path";
+import { before, describe, it } from "mocha";
 import { expect } from "chai";
-import { codes, init, initO, keys, map } from "../app";
+import { codes, initErrors, keys, map } from "../app";
 
 describe("with defaults testing", () => {
     describe("+ve tests", () => {
@@ -16,16 +14,8 @@ describe("with defaults testing", () => {
         };
 
         before(() => {
-            // write config file to root
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
             // initialize
-            init();
+            initErrors([], configFileData);
         });
 
         // keys functions
@@ -98,11 +88,6 @@ describe("with defaults testing", () => {
                 });
             });
         });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
-        });
     });
 
     describe("-ve tests", () => {
@@ -113,16 +98,8 @@ describe("with defaults testing", () => {
         };
 
         before(() => {
-            // write config file to root
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
             // initialize
-            init();
+            initErrors([], configFileData);
         });
 
         // keys functions
@@ -181,11 +158,6 @@ describe("with defaults testing", () => {
                 expect(fn).to.throw(Error, "invalid errorCode '500'");
             });
         });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
-        });
     });
 });
 
@@ -199,16 +171,8 @@ describe("with extra codes", () => {
         };
 
         before(() => {
-            // write config file to root
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
             // initialize
-            init([777, 888, 999]);
+            initErrors([777, 888, 999], configFileData);
         });
 
         // keys functions
@@ -254,11 +218,6 @@ describe("with extra codes", () => {
                 });
             });
         });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
-        });
     });
 
     describe("-ve tests", () => {
@@ -270,16 +229,8 @@ describe("with extra codes", () => {
         };
 
         before(() => {
-            // write config file to root
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
             // initialize
-            init([777, 888, 999]);
+            initErrors([777, 888, 999], configFileData);
         });
 
         // keys functions
@@ -327,335 +278,109 @@ describe("with extra codes", () => {
                 expect(map1).to.not.have.property("a");
             });
         });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
-        });
-    });
-});
-
-describe("with diff file name", () => {
-    describe("+ve tests", () => {
-        // config data
-        const configFileData = {
-            666: ["error1", "error2"],
-            888: ["error3"],
-        };
-
-        before(() => {
-            // write config file to root
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.key.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
-            // initialize
-            init([666, 888], "error.key.config.json");
-        });
-
-        // keys functions
-        describe("keys", () => {
-            // contain 4 keys
-            it("expect keys fn to return 3 keys", function () {
-                expect(Object.keys(keys())).to.have.lengthOf(3);
-            });
-
-            // contain same keys as given
-            it("expect to return same keys", function () {
-                const originalKeys = ["error1", "error2", "error3"];
-                expect(Object.keys(keys())).to.eql(originalKeys);
-            });
-
-            // key value should match expected result
-            it("expect values to match", function () {
-                const values = [6661011, 6661012, 8881021];
-                expect(Object.values(keys())).to.eql(values);
-            });
-        });
-
-        // map function
-        describe("map", () => {
-            let map1;
-
-            before(() => {
-                map1 = map();
-            });
-
-            // map should match expected
-            it("expect map to match", function () {
-                expect(map1).to.eql({
-                    666: { error1: 1011, error2: 1012 },
-                    888: { error3: 1021 },
-                });
-            });
-        });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.key.config.json"));
-        });
-    });
-
-    describe("-ve tests", () => {
-        // config data
-        const configFileData = {
-            666: ["error1", "error2"],
-            888: ["error3"],
-        };
-
-        before(() => {
-            // write config file to root
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.key.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
-            // initialize
-            init([666, 888], "error.key.config.json");
-        });
-
-        // keys functions
-        describe("keys", () => {
-            // not contain 4 keys
-            it("expect keys fn to not return 2 keys", function () {
-                expect(Object.keys(keys())).to.not.have.lengthOf(2);
-            });
-
-            // not contain different keys
-            it("expect to not return different keys", function () {
-                const originalKeys = ["error5", "error6", "error7"];
-                expect(Object.keys(keys())).to.not.eql(originalKeys);
-            });
-
-            // key value should match expected result
-            it("expect values to not match", function () {
-                const values = [4001012, 4001013, 5001024];
-                expect(Object.values(keys())).to.not.eql(values);
-            });
-        });
-
-        // map function
-        describe("map", () => {
-            let map1;
-
-            before(() => {
-                map1 = map();
-            });
-
-            // map should match expected
-            it("expect map to not match", function () {
-                expect(map1).to.not.eql({
-                    401: { error1: 4001011, error101: 4001012 },
-                    502: { internal1: 5001021, internal201: 5001022 },
-                });
-            });
-
-            it("expect map to not have different prop keys", function () {
-                expect(map1).to.not.have.property("d1");
-            });
-        });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.key.config.json"));
-        });
     });
 });
 
 describe("invalid cases", () => {
     // invalid key
     describe("invalid key", () => {
-        before(() => {
+        it("expect to throw invalid key", function () {
             // config data
             const configFileData = {
                 777: ["error1"],
             };
 
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
-        });
+            function fn() {
+                initErrors([], configFileData);
+            }
 
-        it("expect to throw invalid key", function () {
-            expect(init).to.throw(
+            expect(fn).to.throw(
                 Error,
                 "invalid key '777' ; kindly provide a valid key (read error-key docs for help)",
             );
-        });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
     // key not a number
     describe("key not a number", () => {
-        before(() => {
-            // config data
-            const configFileData = {
-                777: ["error1"],
-            };
-
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
-        });
-
         it("expect to throw invalid key", function () {
             function fn() {
                 // @ts-ignore
-                init(["hello"]);
+                initErrors(["hello"], {});
             }
             expect(fn).to.throw(Error, "hello is not a number");
-        });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
     // key not in range
     describe("key not in range", () => {
-        before(() => {
-            // config data
-            const configFileData = {
-                1013: ["error1"],
-            };
-
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
-        });
-
         it("expect to throw invalid key", function () {
             function fn() {
-                init([1013]);
+                initErrors([1013], {
+                    1013: ["error1"],
+                });
             }
             expect(fn).to.throw(Error, "custom status code must be < 1000");
-        });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
     // invalid data
     describe("invalid data", () => {
-        before(() => {
-            const configFileData = {
-                400: "string",
-            };
-
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
-        });
-
         it("expect to throw invalid data", function () {
-            expect(init).to.throw(
+            function fn() {
+                initErrors([], {
+                    400: "string",
+                });
+            }
+
+            expect(fn).to.throw(
                 Error,
                 "invalid data in key '400' ; must be an array",
             );
-        });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
     // invalid array value
     describe("invalid value", () => {
-        before(() => {
-            const configFileData = {
-                400: [0, 2],
-            };
-
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
-        });
-
         it("expect to throw invalid data", function () {
-            expect(init).to.throw(
+            function fn() {
+                initErrors([], {
+                    400: [0, 2],
+                });
+            }
+
+            expect(fn).to.throw(
                 Error,
                 "invalid data values ; array must contain only string values",
             );
-        });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
         });
     });
 
     // duplicate keys
     describe("duplicate keys", () => {
-        before(() => {
-            const configFileData = {
-                400: ["error1"],
-                500: ["error2", "error1"],
-            };
-
-            writeFileSync(
-                resolve(process.env.INIT_CWD, "error.config.json"),
-                JSON.stringify(configFileData, null, 4),
-                {
-                    encoding: "utf-8",
-                },
-            );
-        });
-
         it("expect to throw duplicate keys", function () {
-            expect(init).to.throw(Error, "duplicate keys found - error1");
-        });
-
-        // delete config file from root
-        after(() => {
-            unlinkSync(resolve(process.env.INIT_CWD, "error.config.json"));
+            function fn() {
+                initErrors([], {
+                    400: ["error1"],
+                    500: ["error2", "error1"],
+                });
+            }
+            expect(fn).to.throw(Error, "duplicate keys found - error1");
         });
     });
 });
 
 describe("with data object", () => {
     describe("with general data", () => {
-        // config data
-        const configFileData = {
-            400: { error1: "" },
-            500: ["internal1"],
-        };
-
         before(() => {
+            // config data
+            const configFileData = {
+                400: { error1: "" },
+                500: ["internal1"],
+            };
+
             // initialize
-            initO([], configFileData);
+            initErrors([], configFileData);
         });
 
         // keys functions
@@ -697,16 +422,16 @@ describe("with data object", () => {
     });
 
     describe("with extra codes", () => {
-        // config data
-        const configFileData = {
-            400: ["error1", "error101"],
-            500: ["internal1", "internal201"],
-            999: ["something"],
-        };
-
         before(() => {
+            // config data
+            const configFileData = {
+                400: ["error1", "error101"],
+                500: ["internal1", "internal201"],
+                999: ["something"],
+            };
+
             // initialize
-            initO([999], configFileData);
+            initErrors([999], configFileData);
         });
 
         // keys functions

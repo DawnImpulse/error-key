@@ -1,6 +1,6 @@
 {
   "name": "error-key",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simplify your project error handling & conveying issues to outside world",
   "main": "dist/app/index.js",
   "types": "dist/app/index.d.ts",
