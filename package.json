@@ -1,6 +1,6 @@
 {
   "name": "error-key",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simplify your project error handling & conveying issues to outside world",
   "main": "dist/app/index.js",
   "types": "dist/app/index.d.ts",
@@ -27,11 +27,7 @@
     "type": "git",
     "url": "https://github.com/DawnImpulse/error-key.git"
   },
-  "license": "ISC",
-  "dependencies": {
-    "eslint-plugin-react": "^7.23.2",
-    "eslint-plugin-react-hooks": "^4.2.0"
-  },
+  "license": "Unlicense",
   "devDependencies": {
     "@types/node": "14.14.31",
     "@typescript-eslint/eslint-plugin": "4.24.0",

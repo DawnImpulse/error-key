@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/DawnImpulse/error-key/compare/v1.0.1...v1.0.2) (2023-01-09)
+
+
+### Bug Fixes
+
+* added unnecessary files in npmignore, removed install size & added unlicense ([f58de95](https://github.com/DawnImpulse/error-key/commit/f58de950866a9210cc2cd51c89c37a98ee5fee54))
+
+
+### Tests
+
+* **ci:** run on node version >=10 ([a323888](https://github.com/DawnImpulse/error-key/commit/a323888533a6ba733c8d35b7d156f78e6d822f79))
+
+
+### Continuous Integration
+
+* cd removed workflow description ([2d60195](https://github.com/DawnImpulse/error-key/commit/2d60195a261799998df300e5afd0e3c63ed99ca6))
+
 ### [1.0.1](https://github.com/DawnImpulse/error-key/compare/v1.0.0...v1.0.1) (2023-01-09)
 
 
