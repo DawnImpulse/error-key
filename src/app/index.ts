@@ -4,10 +4,7 @@
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import Mapping from "./utils/mapping";
-import appRoot from "app-root-path";
 import Validations from "./utils/validations";
-import typeOf from "./utils/typeOf";
-import { types } from "util";
 
 let mapping: Mapping;
 let validations: Validations;
@@ -18,22 +15,26 @@ export interface ActualCode {
 }
 
 /**
+ * parse extra codes
+ * custom errorCode should be < 1000
+ */
+function parseExtraCodes(extraCodes: number[]) {
+    extraCodes.forEach((el) => {
+        if (typeof el !== "number") throw new Error(`${el} is not a number`);
+        if (el >= 1000) throw new Error(`custom status code must be < 1000`);
+    });
+}
+
+/**
  * initialize error key module
  * @param name - (not required) if provided a different name of file
  * @param extraCodes - (not required) if need to provide different error codes
  * @throws Error - any config related issues
  */
-export function init(
-    extraCodes: number[] = [],
-    name: string = "error.config.json",
-) {
-    // custom errorCode should be < 1000
-    extraCodes.forEach((el) => {
-        if (typeof el !== "number") throw new Error(`${el} is not a number`);
-        if (el >= 1000) throw new Error(`custom status code must be < 1000`);
-    });
+export function init(extraCodes: number[] = [], name = "error.config.json") {
+    parseExtraCodes(extraCodes);
     // read config file
-    const map = readFileSync(resolve(appRoot.path, name), "utf-8");
+    const map = readFileSync(resolve(process.env.INIT_CWD, name), "utf-8");
     // validate config file
     validations = new Validations(extraCodes);
     validations.config(JSON.parse(map)).unique();
@@ -42,9 +43,27 @@ export function init(
 }
 
 /**
- * get all unique keys with values
+ * initialize error key module from a data object
+ * @param data - (not required) if provided a different name of file
+ * @param extraCodes - (not required) if need to provide different error codes
+ * @throws Error - any config related issues
  */
-export function keys(): object {
+export function initO(extraCodes: number[], data: object) {
+    parseExtraCodes(extraCodes);
+    // validate config file
+    validations = new Validations(extraCodes);
+    validations.config(data).unique();
+    // creating internal mappings
+    mapping = new Mapping(data);
+}
+
+/**
+ * get all unique keys with values
+ * although the function return a key-value object
+ * but returning any so if using typescript
+ * @return any
+ */
+export function keys(): any {
     return mapping.keyValues();
 }
 
