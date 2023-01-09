@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fc8eff0-95ec-4678-9cb3-fa267f5a6898" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/index.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +34,12 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Saksham/data/sourcei/node-libs/error-key/src/tests",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.mocha.mocha_node_package_dir": "C:/Users/Saksham/data/sourcei/node-libs/error-key/node_modules/mocha",
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Saksham\\data\\sourcei\\node-libs\\error-key\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
@@ -53,17 +52,7 @@
       <recent name="C:\Users\Saksham\data\sourcei\node-libs\error-key\.github\workflows" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.coverage">
     <configuration name="coverage" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -84,7 +73,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="with data object" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="invalid cases" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -95,11 +84,11 @@
       <test-kind>SUITE</test-kind>
       <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
       <test-names>
-        <name value="with data object" />
+        <name value="invalid cases" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="with data object.with general data" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="invalid cases.invalid key" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -110,18 +99,54 @@
       <test-kind>SUITE</test-kind>
       <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
       <test-names>
-        <name value="with data object" />
-        <name value="with general data" />
+        <name value="invalid cases" />
+        <name value="invalid key" />
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="src\tests" type="mocha-javascript-test-runner" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>tdd</ui>
+      <extra-mocha-options>--require ts-node/register --require source-map-support/register --config .mocharc.js</extra-mocha-options>
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory>$PROJECT_DIR$/src/tests</test-directory>
+      <recursive>false</recursive>
+      <method v="2" />
+    </configuration>
+    <configuration name="with defaults testing" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/src/tests/index.test.ts</test-file>
+      <test-names>
+        <name value="with defaults testing" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Mocha.src\tests" />
+      <item itemvalue="Mocha.invalid cases" />
+      <item itemvalue="Mocha.invalid cases.invalid key" />
+      <item itemvalue="Mocha.with defaults testing" />
+      <item itemvalue="npm.coverage" />
+      <item itemvalue="npm.test" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.coverage" />
         <item itemvalue="npm.test" />
-        <item itemvalue="Mocha.with data object.with general data" />
-        <item itemvalue="Mocha.with data object" />
+        <item itemvalue="Mocha.with defaults testing" />
+        <item itemvalue="Mocha.invalid cases" />
+        <item itemvalue="Mocha.invalid cases.invalid key" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +176,7 @@
       <workItem from="1621659592436" duration="1928000" />
       <workItem from="1621664295088" duration="57000" />
       <workItem from="1621664491980" duration="1632000" />
-      <workItem from="1673257239873" duration="7041000" />
+      <workItem from="1673257239873" duration="8699000" />
     </task>
     <servers />
   </component>
